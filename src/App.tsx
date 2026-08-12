@@ -1,17 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { useFetchProducts } from "./hooks/useProducts";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const { loading, error } = useFetchProducts();
   return (
-
     <div className="justify-center items-center flex flex-col min-h-screen bg-black text-white">
       <h1 className="text-3xl font-bold">Welcome to Vite + React</h1>
+      {loading && <div className="p-8 text-xl font-semibold">Loading...</div>}
+      {error && <div>"Error: "+error </div>}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

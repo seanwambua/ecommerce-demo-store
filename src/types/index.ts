@@ -1,0 +1,170 @@
+export interface User {
+  id: string;
+  fname: string;
+  lname: string;
+  email: string;
+  displayName?: string;
+  photoURL?: string;
+  verified: boolean;
+}
+
+export interface Vendor {
+  id: string;
+  userId: string; 
+  name: string;
+  contactEmail: string;
+  contactPhone?: string;
+  createdAt: Date;
+  updatedAt: Date;
+  address?: Address;
+}
+
+export interface Buyer {
+  id: string;
+  userId?: string;
+  anonymous?: boolean;  
+  name: string;
+  email: string;
+  createdAt: Date;
+  updatedAt: Date;
+  address?: Address;
+}
+
+export interface Admin {
+  id: string;
+  userId: string; 
+  name: string;
+  email: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Address {
+  id: string;
+  userId: string;
+  addressLine1: string;
+  addressLine2?: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  country: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Product {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image?: ProductImage;
+  brand?: Brand;
+  category: Category;
+  keywords?: string[]; // Array of keywords for search functionality
+  inventory?: Inventory;
+  review?: Review[];
+  discount?: Discount[];
+}
+
+export interface ProductImage {
+  id: string;
+  featuredImageLink: string;
+  productShowCaseLinks?: string[];
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  description?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Brand {
+  id: string;
+  name: string;
+  description?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Discount {
+  id: string;
+  code: string;
+  description?: string;
+  percentage: number; // e.g., 10 for 10% off
+  validFrom: Date;
+  validUntil: Date;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Inventory {
+  productId: string;
+  quantity: number;
+  lastUpdated: Date;
+}
+
+export interface Review {
+  id: string;
+  productId: string;
+  userId: string;
+  rating: number; // e.g., 1 to 5
+  comment?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Order {
+  id: string;
+  userId: string;
+  productIds: string[];
+  totalAmount: number;
+  status: "pending" | "completed" | "cancelled";
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Cart {
+  userId: string;
+  items: CartItem[];
+  totalAmount: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface CartItem {
+  productId: string;
+  quantity: number;
+}
+
+export interface PaymentMethod {
+  id: string;
+  userId: string;
+  cardNumber: string; // In a real application, you would not store this directly
+  cardHolderName: string;
+  expirationDate: string; // MM/YY format
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Transaction {
+  id: string;
+  orderId: string;
+  paymentMethodId: string;
+  amount: number;
+  status: "pending" | "completed" | "failed";
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Notification {
+  id: string;
+  userId: string;
+  message: string;
+  read: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}

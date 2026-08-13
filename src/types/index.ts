@@ -8,9 +8,11 @@ export interface User {
   verified: boolean;
 }
 
+export type UserRole = "buyer" | "vendor" | "admin";
+
 export interface Vendor {
   id: string;
-  userId: string; 
+  userId: string;
   name: string;
   contactEmail: string;
   contactPhone?: string;
@@ -22,7 +24,7 @@ export interface Vendor {
 export interface Buyer {
   id: string;
   userId?: string;
-  anonymous?: boolean;  
+  anonymous?: boolean;
   name: string;
   email: string;
   createdAt: Date;
@@ -32,7 +34,7 @@ export interface Buyer {
 
 export interface Admin {
   id: string;
-  userId: string; 
+  userId: string;
   name: string;
   email: string;
   createdAt: Date;

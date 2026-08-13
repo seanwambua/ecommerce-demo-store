@@ -29,9 +29,7 @@ import type {
 export function populateDB() {
   try {
     // Create Users
-    createUser("usr-buyer-01", sampleBuyerUser);
-    createUser("usr-vendor-01", sampleVendorUser);
-    createUser("usr-admin-01", sampleAdminUser);
+    createUser("usr-01", sampleUser);
 
     // Create User Accounts
     createBuyer("buyer-001", sampleBuyer);
@@ -77,73 +75,48 @@ export const sampleAddressVendor: Address = {
 // -----------------------------------------------------------------------------
 // 2. USERS (Buyer-only, Vendor-User, Admin-User)
 // -----------------------------------------------------------------------------
-export const sampleBuyerUser: User = {
-  id: "usr-buyer-01",
+export const sampleUser: User = {
+  id: "usr-01",
   fname: "Jane",
   lname: "Doe",
   email: "jane.doe@example.com",
   displayName: "Jane D.",
   photoURL: "https://example.com/avatars/janedoe.jpg",
-  verified: true,
-  buyerId: "buyer-001",
-};
-
-export const sampleVendorUser: User = {
-  id: "usr-vendor-01",
-  fname: "Alex",
-  lname: "Smith",
-  email: "alex.smith@orangeline.com",
-  displayName: "Alex @ OrangeLine",
-  photoURL: "https://example.com/avatars/alexsmith.jpg",
-  verified: true,
-  buyerId: "buyer-002",
-  vendorId: "vendor-001",
-};
-
-export const sampleAdminUser: User = {
-  id: "usr-admin-01",
-  fname: "Sarah",
-  lname: "Connor",
-  email: "sarah.admin@store.com",
-  displayName: "Admin Sarah",
-  photoURL: "https://example.com/avatars/sarahadmin.jpg",
-  verified: true,
-  buyerId: "buyer-003",
-  adminId: "admin-001",
-};
+  verified: true
+}
 
 // -----------------------------------------------------------------------------
 // 3. ROLES (Buyer, Vendor, Admin)
 // -----------------------------------------------------------------------------
 export const sampleBuyer: Buyer = {
   id: "buyer-001",
+  userId: "usr-01",
+  anonymous: false,
   name: "Jane Doe",
   email: "jane.doe@example.com",
-  createdAt: new Date("2026-01-10T08:00:00Z"),
-  updatedAt: new Date("2026-01-10T08:00:00Z"),
-  address: sampleAddressBuyer,
-  user: sampleBuyerUser,
-  anonymous: false,
+  createdAt: new Date,
+  updatedAt: new Date,
+  address: sampleAddressBuyer
 };
 
 export const sampleVendor: Vendor = {
   id: "vendor-001",
+  userId: "usr-01",
   name: "Orange Line Apparel Ltd",
   contactEmail: "support@orangeline.com",
   contactPhone: "+254700000000",
   createdAt: new Date("2026-01-05T09:30:00Z"),
   updatedAt: new Date("2026-01-05T09:30:00Z"),
-  address: sampleAddressVendor,
-  user: sampleVendorUser,
-};
+  address: sampleAddressVendor
+}
 
 export const sampleAdmin: Admin = {
   id: "admin-001",
+  userId: "usr-01",
   name: "Sarah Connor",
   email: "sarah.admin@store.com",
   createdAt: new Date("2026-01-01T00:00:00Z"),
-  updatedAt: new Date("2026-01-01T00:00:00Z"),
-  user: sampleAdminUser,
+  updatedAt: new Date("2026-01-01T00:00:00Z")
 };
 
 // -----------------------------------------------------------------------------

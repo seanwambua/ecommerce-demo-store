@@ -9,7 +9,7 @@ interface ProductCardProps {
 export default function ProductCard({ product, addToCart }: ProductCardProps) {
   console.log("Product Details: " + { product });
   return (
-    <div className="w-full group rounded-2xl border border-0 bg-zinc-200 text-neutral-400 overflow-hidden  shadow-md hover:shadow-xl transition-shadow gap-0">
+    <div className="w-full group rounded-2xl border border-0 bg-zinc-200 text-neutral-400 overflow-hidden  shadow-lg hover:shadow-xl transition-shadow gap-0">
       <div className="aspect-square bg-zinc-900 overflow-hidden">
         <img
           src={product.image?.featuredImageLink}
@@ -34,7 +34,7 @@ export default function ProductCard({ product, addToCart }: ProductCardProps) {
         </div>
 
         <div className="flex items-center justify-between">
-          <span className="pl-2 text-md text-zinc-600 font-semibold">
+          <span className="pl-2 text-sm text-zinc-600 font-bold">
             {"KES " + product.price.toLocaleString("KE")}
           </span>
         </div>

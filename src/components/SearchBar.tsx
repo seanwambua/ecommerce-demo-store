@@ -9,7 +9,7 @@ interface SearchBarProps {
 export default function SearchBar({
   value = "",
   onChange,
-  placeholder = "Search Kobe, LeBron, Jordan, size 10.5...",
+  placeholder = "Search",
 }: SearchBarProps) {
   return (
     <div className="hidden md:flex flex-1 max-w-xs lg:max-w-sm xl:max-w-md mx-4 lg:mx-8 relative">

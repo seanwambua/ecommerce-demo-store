@@ -1,4 +1,4 @@
-import ProductListing from "./components/ProductListing";
+import ProductListing from "./pages/ProductListing";
 import { Spinner } from "./components/ui/spinner";
 import { useFetchProducts } from "./hooks/useProducts";
 

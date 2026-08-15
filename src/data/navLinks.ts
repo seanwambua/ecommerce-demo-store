@@ -1,4 +1,4 @@
-import { Flame, Grid, HeartHandshake, Home } from "lucide-react";
+import { Grid, Home } from "lucide-react";
 
 export interface NavLink {
   label: string;
@@ -11,11 +11,11 @@ export interface NavLink {
 export const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/", icon: Home },
   { label: "Catalog", href: "/catalog", icon: Grid },
-  { label: "Discounts", href: "/catalog?filter=discounts", icon: Flame },
-  {
-    label: "Impact",
-    href: "/impact",
-    icon: HeartHandshake,
-    iconClass: "text-emerald-500",
-  },
+  // { label: "Discounts", href: "/catalog?filter=discounts", icon: Flame },
+  // {
+  //   label: "Impact",
+  //   href: "/impact",
+  //   icon: HeartHandshake,
+  //   iconClass: "text-emerald-500",
+  // },
 ];

@@ -53,7 +53,7 @@ export default function Header({
         <div className="flex items-center gap-2 sm:gap-3">
           <button
             type="button"
-            className="relative p-2 rounded-xl bg-slate-950 dark:bg-amber-500 text-white dark:text-slate-950 hover:bg-slate-800 dark:hover:bg-amber-400 transition-colors flex items-center gap-2 px-3.5 shadow-xs cursor-pointer"
+            className="relative p-2 rounded-xl border border-1 shadow-lg transition-colors flex items-center gap-2 px-3.5 shadow-xs cursor-pointer"
             title="View Cart"
           >
             <ShoppingBag className="w-4 h-4" />

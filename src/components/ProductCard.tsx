@@ -7,9 +7,19 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, addToCart }: ProductCardProps) {
-  console.log("Product Details: " + { product });
+  const inStock = Boolean(product.inventory?.quantity);
+
+  /**
+   * A function to add product items to zustand cart store.
+   * @returns void
+   */
+  function handleAddToCart() {
+    if (!inStock || !addToCart) return;
+    addToCart(product);
+  }
+    
   return (
-    <div className="w-full group rounded-2xl border border-0 bg-zinc-200 text-neutral-400 overflow-hidden  shadow-lg hover:shadow-xl transition-shadow gap-0">
+    <div className="w-full group rounded-2xl border border-2 border-zinc-600 bg-zinc-200 text-neutral-400 overflow-hidden  shadow-lg hover:shadow-xl transition-shadow gap-0">
       <div className="aspect-square bg-zinc-900 overflow-hidden">
         <img
           src={product.image?.featuredImageLink}
@@ -21,13 +31,13 @@ export default function ProductCard({ product, addToCart }: ProductCardProps) {
         <div className="flex items-start justify-between p4 gap-2">
           <div>
             {product.brand ? (
-              <p className="text-sm font-light tracking-wide text-neutral-900 pb-2">
+              <p className="text-sm font-light tracking-wide text-zinc-700 pb-2">
                 {product.brand.name}
               </p>
             ) : (
               <></>
             )}
-            <p className="font-normal text-neutral-600 text-lg p-0">
+            <p className="font-normal text-black text-lg p-0">
               {product.name}
             </p>
           </div>
@@ -40,15 +50,15 @@ export default function ProductCard({ product, addToCart }: ProductCardProps) {
         </div>
 
         <button
-          onClick={addToCart}
-          className={`w-full mt-2 flex items-center justify-center gap-2 rounded-xl py-2 text-sm font-medium transition-colors ${
-            product.inventory?.quantity
-              ? "bg-neutral-100 text-neutral-400 cursor-not-allowed"
-              : "bg-neutral-900 text-white hover:bg-neutral-700"
+          onClick={handleAddToCart}
+          className={`w-full border border-2 border-zinc-400 mt-2 flex items-center justify-center gap-2 rounded-xl py-2 text-sm font-medium transition-colors ${
+            inStock
+              ? "bg-neutral-900 text-zinc-300 hover:bg-black" 
+              : "bg-neutral-100 text-zinc-600 cursor-not-allowed"
           }`}
         >
           <ShoppingCart size={15} />
-          {product.inventory?.quantity ? "Out of Stock" : "Add to cart"}
+          {inStock ? "Add to cart" : "Out of Stock"}
         </button>
       </div>
     </div>

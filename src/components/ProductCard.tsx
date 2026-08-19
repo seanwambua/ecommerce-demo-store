@@ -19,12 +19,12 @@ export default function ProductCard({ product, addToCart }: ProductCardProps) {
   }
     
   return (
-    <div className="w-full group rounded-2xl border border-2 border-zinc-600 bg-zinc-200 text-neutral-400 overflow-hidden  shadow-lg hover:shadow-xl transition-shadow gap-0">
-      <div className="aspect-square bg-zinc-900 overflow-hidden">
+    <div className="max-w-90 group rounded-xl border-0 border-zinc-300 bg-white text-neutral-400 overflow-hidden  shadow-xl hover:shadow-2xl transition-shadow gap-0">
+      <div className="bg-zinc-900 overflow-hidden">
         <img
           src={product.image?.featuredImageLink}
           alt={product.name}
-          className="w-full h-full fill object-cover group-hover:scale-105 transition-transform duration-300"
+          className="max-w-[100]/2 fill object-cover group-hover:scale-110 shadow-orange-300 transition-transform duration-300"
         />
       </div>
       <div className="p-4 space-y-2 ">
@@ -47,11 +47,14 @@ export default function ProductCard({ product, addToCart }: ProductCardProps) {
           <span className="pl-2 text-sm text-zinc-600 font-bold">
             {"KES " + product.price.toLocaleString("KE")}
           </span>
+          <span className="pl-2 text-sm text-zinc-400 font-normal">
+            {product.review?.length + " review(s)"}
+          </span>
         </div>
 
         <button
           onClick={handleAddToCart}
-          className={`w-full border border-2 border-zinc-400 mt-2 flex items-center justify-center gap-2 rounded-xl py-2 text-sm font-medium transition-colors ${
+          className={`w-full border border-0 border-zinc-400 mt-2 flex items-center justify-center gap-2 rounded-none py-2 text-sm font-medium transition-colors ${
             inStock
               ? "bg-neutral-900 text-zinc-300 hover:bg-black" 
               : "bg-neutral-100 text-zinc-600 cursor-not-allowed"

@@ -153,12 +153,12 @@ export const sampleDiscount: Discount = {
 export const sampleProductImage: ProductImage = {
   id: "img-orange-line-runner-01",
   featuredImageLink:
-    "https://example.com/images/products/orange-line-runner-featured.jpg",
+    "./images/sports-shoe-feature.png",
   productShowCaseLinks: [
-    "https://example.com/images/products/orange-line-runner-side.jpg",
-    "https://example.com/images/products/orange-line-runner-top.jpg",
-    "https://example.com/images/products/orange-line-runner-close-up.jpg",
-    "https://example.com/images/products/orange-line-runner-rear.jpg",
+    "./images/sports-shoe-feature.png",
+    "./images/showcase-1.png",
+    "./images/showcase-2.png",
+    "./images/showcase-3.png",
   ],
   createdAt: new Date("2026-08-12T05:00:00Z"),
   updatedAt: new Date("2026-08-12T05:00:00Z"),
@@ -191,7 +191,7 @@ export const sampleProduct: Product = {
   name: "Orange Line Trail Runner Pro",
   description:
     "Engineered for rugged terrain and urban paths alike, featuring breathable mesh uppers and a high-traction outsole.",
-  price: 129.99,
+  price: 12999,
   image: sampleProductImage,
   brand: sampleBrand,
   category: sampleCategory,

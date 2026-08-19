@@ -23,10 +23,10 @@ export default function Header({
 }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 w-full bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
-      <div className="w-full px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4 lg:gap-8">
-        <div className="flex items-center">
-          <Logo />
-          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5 ml-8 lg:ml-10 xl:ml-14 border-l border-slate-200 dark:border-slate-800 pl-8 lg:pl-10 xl:pl-14">
+      <Logo />
+      <div className="w-full px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-evenly  gap-4 lg:gap-8">
+        <div className="flex items-center justify-evenly">
+          <nav className="hidden m-2 lg:flex items-center gap-1.5 xl:gap-2.5 ml-8 lg:ml-10 xl:ml-14 border-l border-slate-200 dark:border-slate-800 pl-8 lg:pl-10 xl:pl-14">
             {NAV_LINKS.map(({ label, href, icon: Icon, iconClass }) => {
               const isActive = currentPath === href;
               return (
@@ -34,9 +34,9 @@ export default function Header({
                   key={label}
                   href={href}
                   className={cn(
-                    "px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5",
+                    "px-3 py-2 m-2 rounded-none text-xs font-bold transition-all flex items-center gap-1.5",
                     isActive
-                      ? "bg-slate-950 dark:bg-amber-500 text-white dark:text-slate-950"
+                      ? "bg-slate-950 dark:bg-amber-500 text-white dark:text-slate-950 shadow-md"
                       : "text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900",
                   )}
                 >
@@ -53,11 +53,11 @@ export default function Header({
         <div className="flex items-center gap-2 sm:gap-3">
           <button
             type="button"
-            className="relative p-2 rounded-xl border border-1 shadow-lg transition-colors flex items-center gap-2 px-3.5 shadow-xs cursor-pointer"
+            className="relative p-2 rounded-xl border-0 shadow-lg transition-colors flex items-center gap-2 px-3.5 shadow-xs cursor-pointer hover:bg-orange-300 "
             title="View Cart"
           >
             <ShoppingBag className="w-4 h-4" />
-            <span className="text-xs font-bold hidden sm:inline">Cart</span>
+            <span className="text-xs font-bold hidden sm:inline ">Cart</span>
             {cartCount > 0 && (
               <span className="w-5 h-5 rounded-full bg-white dark:bg-slate-950 text-slate-950 dark:text-white text-xs font-black flex items-center justify-center">
                 {cartCount}
@@ -71,10 +71,7 @@ export default function Header({
                 {/* <UserMenu user={user} /> */}
               </div>
             ) : (
-              <Button
-                size="sm"
-                className="text-xs font-bold bg-slate-950 dark:bg-amber-500 text-white dark:text-slate-950 hover:bg-slate-800 dark:hover:bg-amber-400 px-4 py-2 rounded-xl shadow-xs cursor-pointer"
-              >
+              <Button variant={"link"} className={"text-sm transition-transform duration-200 "}>
                 Sign In
               </Button>
             )}

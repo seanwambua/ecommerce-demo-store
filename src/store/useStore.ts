@@ -41,10 +41,10 @@ export const useAppStore = create<AppStore>()(
           items: state.items,
           totalAmount: state.totalAmount,
         }),
-      }
+      },
     ),
-    { name: "ThriftAfricaStore" }
-  )
+    { name: "ThriftAfricaStore" },
+  ),
 );
 
 // Convenience selector hooks — keep components subscribed to only what they need

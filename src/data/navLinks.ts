@@ -1,4 +1,4 @@
-import { Grid, Home } from "lucide-react";
+import { Flame, Grid, HeartHandshake, Home, ShoppingBasket, ShoppingBasketIcon } from "lucide-react";
 
 export interface NavLink {
   label: string;
@@ -10,12 +10,12 @@ export interface NavLink {
 // --- Navigation Configuration ---
 export const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/", icon: Home },
-  { label: "Catalog", href: "/catalog", icon: Grid },
-  // { label: "Discounts", href: "/catalog?filter=discounts", icon: Flame },
-  // {
-  //   label: "Impact",
-  //   href: "/impact",
-  //   icon: HeartHandshake,
-  //   iconClass: "text-emerald-500",
-  // },
+  { label: "Shop", href: "/catalog", icon: ShoppingBasketIcon },
+  // { label: "Discounts", href: "/catalog?filter=discounts", icon: Flame, iconClass:"text-amber-500" },
+  {
+    label: "Social Impact",
+    href: "/impact",
+    icon: HeartHandshake,
+    iconClass: "text-emerald-500",
+  },
 ];

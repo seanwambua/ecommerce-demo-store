@@ -1,11 +1,11 @@
-import { db } from "../firebase";
+import { db } from "../../../firebase";
 import {
   type Brand,
   type Category,
   type Discount,
   type Product,
   type ProductImage,
-} from "../types/index";
+} from "../types/product";
 import {
   collection,
   getDocs,

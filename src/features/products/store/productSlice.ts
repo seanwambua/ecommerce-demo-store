@@ -1,5 +1,5 @@
 import type { StateCreator } from "zustand";
-import type { Product } from "../../types";
+import type { Product } from "../types/product";
 
 export interface ProductFilters {
   categoryId?: string;

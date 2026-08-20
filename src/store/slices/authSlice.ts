@@ -47,3 +47,5 @@ export const createAuthSlice: StateCreator<AuthSlice, [], [], AuthSlice> = (
 
   logout: () => set({ ...initialAuthState }),
 });
+
+

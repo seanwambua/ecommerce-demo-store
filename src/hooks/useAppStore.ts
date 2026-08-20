@@ -1,13 +1,13 @@
 import { create } from "zustand";
 import { devtools, persist, createJSONStorage } from "zustand/middleware";
-import { type AuthSlice, createAuthSlice } from "./slices/authSlice";
-import { type CartSlice, createCartSlice } from "./slices/cartSlice";
-import { type ProductSlice, createProductSlice } from "./slices/productSlice";
-import { type OrderSlice, createOrderSlice } from "./slices/orderSlice";
+import { type AuthSlice, createAuthSlice } from "../store/slices/authSlice";
+import { type CartSlice, createCartSlice } from "../store/slices/cartSlice";
+import { type ProductSlice, createProductSlice } from "../features/products/store/productSlice";
+import { type OrderSlice, createOrderSlice } from "../store/slices/orderSlice";
 import {
   type NotificationSlice,
   createNotificationSlice,
-} from "./slices/notificationSlice";
+} from "../store/slices/notificationSlice";
 
 export type AppStore = AuthSlice &
   CartSlice &
@@ -26,10 +26,9 @@ export const useAppStore = create<AppStore>()(
         ...createNotificationSlice(...a),
       }),
       {
-        name: "thrift-africa-store",
+        name: "thrift-africa",
         storage: createJSONStorage(() => localStorage),
         // Only persist state that should survive a refresh — never cache
-        // fetched catalog/order/notification data or loading flags.
         partialize: (state) => ({
           user: state.user,
           role: state.role,
@@ -63,12 +62,4 @@ export const useAuth = () =>
     logout: s.logout,
   }));
 
-export const useCart = () =>
-  useAppStore((s) => ({
-    items: s.items,
-    totalAmount: s.totalAmount,
-    addToCart: s.addToCart,
-    removeFromCart: s.removeFromCart,
-    updateItemQuantity: s.updateItemQuantity,
-    clearCart: s.clearCart,
-  }));
+ 

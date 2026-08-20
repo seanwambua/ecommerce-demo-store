@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { getAllProducts } from "../lib/product";
-import type { Product } from "../types";
+import { getAllProducts } from "../services/product";
+import type { Product } from "../types/product";
 
 export function useFetchProducts() {
   const [products, setProducts] = useState<any[]>([]);
@@ -22,7 +22,7 @@ export function useFetchProducts() {
     fetchAllData();
   }, []);
 
-  console.log(products); // Log the products to the console
+  // console.log(products); // Log the products to the console
 
   return { products, loading, error };
 }

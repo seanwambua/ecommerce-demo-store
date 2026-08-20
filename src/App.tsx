@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router";
-import ProductListing from "./pages/ProductListing";
-import ProductItem from "./pages/ProductItemPage";
+import ProductListing from "../src/features/products/components/ProductListing";
 import { Spinner } from "./components/ui/spinner";
-import { useFetchProducts } from "./hooks/useProducts";
+import { useFetchProducts } from "./features/products/hooks/useProducts";
 import Home from "./pages/Home";
+import ProductItemRoute from "./features/products/routes/ProductItemRoute";
 
 export default function App() {
   const { products, loading, error } = useFetchProducts();
@@ -33,12 +33,11 @@ export default function App() {
           path="/catalog"
           element={<ProductListing products={products} />}
         />
-        {products.map((product) => (
-          <Route
-            path={"/products/:id"}
-            element={<ProductItem productItem={product} />}
-          />
-        ))}
+
+        <Route
+          path={"/products/:id"}
+          element={<ProductItemRoute products={products} />}
+        />
       </Routes>
     </div>
   );

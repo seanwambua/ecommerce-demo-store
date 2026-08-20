@@ -1,4 +1,4 @@
-import { Flame, Grid, HeartHandshake, Home, ShoppingBasket, ShoppingBasketIcon } from "lucide-react";
+import { HeartHandshake, Home, ShoppingBasketIcon } from "lucide-react";
 
 export interface NavLink {
   label: string;
@@ -11,7 +11,6 @@ export interface NavLink {
 export const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/", icon: Home },
   { label: "Shop", href: "/catalog", icon: ShoppingBasketIcon },
-  // { label: "Discounts", href: "/catalog?filter=discounts", icon: Flame, iconClass:"text-amber-500" },
   {
     label: "Social Impact",
     href: "/impact",

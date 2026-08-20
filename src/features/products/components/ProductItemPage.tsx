@@ -1,8 +1,8 @@
 "use client";
 
 import { Share } from "lucide-react";
-import { Button } from "../components/ui/button";
-import type { Product } from "../types";
+import { Button } from "../../../components/ui/button";
+import type { Product } from "../types/product";
 
 interface ProductItemPageProps {
   productItem: Product;

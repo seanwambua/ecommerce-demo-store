@@ -1,13 +1,25 @@
 import { create } from "zustand";
 import { devtools, persist, createJSONStorage } from "zustand/middleware";
-import { type AuthSlice, createAuthSlice } from "../store/slices/authSlice";
-import { type CartSlice, createCartSlice } from "../store/slices/cartSlice";
-import { type ProductSlice, createProductSlice } from "../features/products/store/productSlice";
-import { type OrderSlice, createOrderSlice } from "../store/slices/orderSlice";
+import {
+  type AuthSlice,
+  createAuthSlice,
+} from "../features/auth/store/authSlice";
+import {
+  type CartSlice,
+  createCartSlice,
+} from "../features/checkout/store/cartSlice";
+import {
+  type ProductSlice,
+  createProductSlice,
+} from "../features/products/store/productSlice";
+import {
+  type OrderSlice,
+  createOrderSlice,
+} from "../features/checkout/store/orderSlice";
 import {
   type NotificationSlice,
   createNotificationSlice,
-} from "../store/slices/notificationSlice";
+} from "../features/notifications/store/notificationSlice";
 
 export type AppStore = AuthSlice &
   CartSlice &
@@ -61,5 +73,3 @@ export const useAuth = () =>
     setAdminProfile: s.setAdminProfile,
     logout: s.logout,
   }));
-
- 

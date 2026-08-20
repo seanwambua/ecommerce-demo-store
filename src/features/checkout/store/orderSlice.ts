@@ -1,5 +1,5 @@
 import type { StateCreator } from "zustand";
-import type { Order } from "../../types";
+import type { Order } from "../../products/types";
 
 export interface OrderSlice {
   orders: Order[];

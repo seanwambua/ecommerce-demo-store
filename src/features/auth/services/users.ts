@@ -1,5 +1,5 @@
-import { db } from "../firebase";
-import { type Address, type Admin, type Buyer, type User, type Vendor } from "../types/index";
+import { db } from "../../../firebase";
+import { type Address, type Admin, type Buyer, type User, type Vendor } from "../types";
 import {
   collection,
   getDocs,

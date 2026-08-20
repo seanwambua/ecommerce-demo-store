@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getAllProducts } from "../services/product";
-import type { Product } from "../types/product";
+import type { Product } from "../types";
 
 export function useFetchProducts() {
   const [products, setProducts] = useState<any[]>([]);

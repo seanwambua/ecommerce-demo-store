@@ -2,7 +2,7 @@
 
 import { Share } from "lucide-react";
 import { Button } from "../../../components/ui/button";
-import type { Product } from "../types/product";
+import type { Product } from "../types";
 
 interface ProductItemPageProps {
   productItem: Product;

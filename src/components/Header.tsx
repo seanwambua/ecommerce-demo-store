@@ -2,8 +2,8 @@ import { ShoppingBag } from "lucide-react";
 import { Button } from "./ui/button";
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
-import { NAV_LINKS } from "../data/navLinks";
-import type { User } from "../types";
+import { NAV_LINKS } from "../sampleData/navLinks";
+import type { User } from "../features/auth/types";
 import { cn } from "../lib/utils";
 
 interface HeaderProps {

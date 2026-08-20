@@ -1,7 +1,7 @@
 import { Button } from "../../../components/ui/button";
 import { EyeIcon, ShoppingCart } from "lucide-react";
 import { Link } from "react-router";
-import type { Product } from "../types/product";
+import type { Product } from "../types";
 import { useAppStore } from "../../../hooks/useAppStore";
 
 interface ProductCardProps {
@@ -11,11 +11,17 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   const inStock = Boolean(product.inventory?.quantity);
 
-  const addToCart = useAppStore((state) => state.addToCart);
+  const addToCart = useAppStore(state => state.addToCart);
+  const removeProduct = useAppStore(state => state.removeProduct);
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevents navigating to product details if card is clickable
     addToCart(product);
+  };
+
+    const handleRemoveFromCart = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevents navigating to product details if card is clickable
+    removeProduct(product.id);
   };
 
   

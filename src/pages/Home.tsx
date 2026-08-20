@@ -1,5 +1,5 @@
 import ProductCard from "../features/products/components/ProductCard";
-import type { Product } from "../features/products/types/product";
+import type { Product } from "../features/products/types";
 
 interface HomeProps {
   products: Product[];

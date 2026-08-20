@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import ProductItemPage from "../components/ProductItemPage"
-import type { Product } from "../types/product";
+import type { Product } from "../types";
 
 interface ProductItemRouteProps {
   products: Product[];

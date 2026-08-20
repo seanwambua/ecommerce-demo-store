@@ -1,5 +1,5 @@
-import { db } from "../firebase";
-import type { Transaction } from "../types/index";
+import { db } from "../../../firebase";
+import type { Transaction } from "../types";
 import {
   collection,
   getDocs,

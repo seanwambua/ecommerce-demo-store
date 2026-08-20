@@ -1,5 +1,5 @@
-import { db } from "../firebase";
-import { Order } from "../types/index";
+import { db } from "../../../firebase";
+import { Order } from "../types";
 import {
   collection,
   getDocs,

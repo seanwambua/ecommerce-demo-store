@@ -24,7 +24,7 @@ import type {
   PaymentMethod,
   Transaction,
   Notification,
-} from "../types/index";
+} from "../features/auth/types";
 
 export function populateDB() {
   try {

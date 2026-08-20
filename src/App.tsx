@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router";
-import ProductListing from "../src/features/products/components/ProductListing";
+import ProductListing from "./features/products/components/ProductListing";
 import { Spinner } from "./components/ui/spinner";
 import { useFetchProducts } from "./features/products/hooks/useProducts";
 import Home from "./pages/Home";

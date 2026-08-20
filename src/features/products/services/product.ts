@@ -5,7 +5,7 @@ import {
   type Discount,
   type Product,
   type ProductImage,
-} from "../types/product";
+} from "../types";
 import {
   collection,
   getDocs,

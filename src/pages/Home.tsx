@@ -1,7 +1,12 @@
 import ProductCard from "../components/ProductCard";
-import { sampleProduct } from "../data/products";
+import type { Product } from "../types";
 
-export default function Home() {
+interface HomeProps {
+  products: Product[];
+}
+
+export default function Home({ products }: HomeProps) {
+const productItem = products[0];
   return (
     <>
       {/* <Hero /> */}
@@ -14,12 +19,15 @@ export default function Home() {
         />
       </section>
 
-      <h1 className="py-10 text-3xl uppercase font-semibold"> BEST FEATURES </h1>
+      <h1 className="py-10 text-3xl uppercase font-semibold">
+        {" "}
+        BEST FEATURES{" "}
+      </h1>
       <section className="mx-10 p-20 gap-6 grid grid-cols-1  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-        <ProductCard product={sampleProduct} />
-        <ProductCard product={sampleProduct} />
-        <ProductCard product={sampleProduct} />
-        <ProductCard product={sampleProduct} />
+        <ProductCard key={productItem.id} product={productItem} />
+        <ProductCard key={productItem.id}product={productItem} />
+        <ProductCard key={productItem.id}product={productItem} />
+        <ProductCard key={productItem.id}product={productItem} />
       </section>
 
       <h1 className="py-10 text-3xl uppercase font-semibold">
@@ -27,10 +35,10 @@ export default function Home() {
         Top Discounts %
       </h1>
       <section className="mx-10 p-20 gap-6 grid grid-cols-1   lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-        <ProductCard product={sampleProduct} />
-        <ProductCard product={sampleProduct} />
-        <ProductCard product={sampleProduct} />
-        <ProductCard product={sampleProduct} />
+        <ProductCard key={productItem.id} product={productItem} />
+        <ProductCard key={productItem.id}product={productItem} />
+        <ProductCard key={productItem.id}product={productItem} />
+        <ProductCard key={productItem.id}product={productItem} />
       </section>
 
       <h1 className="py-10 text-3xl uppercase font-semibold">
@@ -38,10 +46,10 @@ export default function Home() {
         TOP RATED SELLERS
       </h1>
       <section className="mx-10 p-20 gap-6 grid grid-cols-1   lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-        <ProductCard product={sampleProduct} />
-        <ProductCard product={sampleProduct} />
-        <ProductCard product={sampleProduct} />
-        <ProductCard product={sampleProduct} />
+       <ProductCard key={productItem.id} product={productItem} />
+        <ProductCard key={productItem.id}product={productItem} />
+        <ProductCard key={productItem.id}product={productItem} />
+        <ProductCard key={productItem.id}product={productItem} />
       </section>
     </>
   );

@@ -1,3 +1,5 @@
+'use client'
+
 import type { Product } from "../types";
 import ProductCard from "../components/ProductCard";
 
@@ -6,7 +8,6 @@ interface ProductListingProps {
 }
 
 export default function ProductListing({ products }: ProductListingProps) {
-
   return (
     <div className="min-h-screen">
       <main className="max-w-6xl mx-auto px-4 py-6 space-y-6">

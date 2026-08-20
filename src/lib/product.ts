@@ -51,7 +51,7 @@ export async function getAllProducts(): Promise<Product[]> {
  * @param id - The product document id.
  * @returns The product, or null if no document exists with that id.
  */
-export async function getProductById(id: string): Promise<Product | null> {
+export async function getProductById(id: string ): Promise<Product | null> {
   try {
     const snapshot = await getDoc(doc(db, "products", id));
     if (!snapshot.exists()) return null;

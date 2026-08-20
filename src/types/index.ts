@@ -59,7 +59,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  image?: ProductImage;
+  image: ProductImage;
   brand?: Brand;
   category: Category;
   keywords?: string[]; // Array of keywords for search functionality
@@ -71,7 +71,7 @@ export interface Product {
 export interface ProductImage {
   id: string;
   featuredImageLink: string;
-  productShowCaseLinks?: string[];
+  productShowCaseLinks: string[];
   createdAt: Date;
   updatedAt: Date;
 }

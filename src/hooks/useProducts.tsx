@@ -26,3 +26,4 @@ export function useFetchProducts() {
 
   return { products, loading, error };
 }
+
